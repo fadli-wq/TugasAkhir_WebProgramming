@@ -22,6 +22,8 @@ $routes->get('/admin/dashboard', 'admin\dashboard\AdminDashboard::index');
 
 ////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////
+// Rute mahasiswa
+$routes->get('/mahasiswa/dashboard', 'mahasiswa\dashboard\MahasiswaDashboard::index');
 
 // Rute mahasiswa jadwal ruang
 $routes->get('/mahasiswa/jadwal_ruang','mahasiswa\jadwalruang\JadwalRuang::index');
