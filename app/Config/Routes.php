@@ -18,3 +18,11 @@ $routes->get('logout', 'Logout::logout');
 
 // Rute admin
 $routes->get('/admin/dashboard', 'admin\dashboard\AdminDashboard::index');
+
+
+////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
+
+// Rute mahasiswa jadwal ruang
+$routes->get('/mahasiswa/jadwal_ruang','mahasiswa\jadwalruang\JadwalRuang::index');
+$routes->post('/mahasiswa/jadwal_ruang/hasil','mahasiswa\jadwalruang\JadwalRuang::hasil');
