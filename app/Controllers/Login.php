@@ -35,8 +35,10 @@ class Login extends BaseController
                     'nim' => $dataUser['nim'],
                     'password' => $dataUser['password'],
                     'role' => $dataUser['role'],
+                    'isLoggedIn' => true
                 ];
-                session()->set($dataSesi);
+                $this->session->set($dataSesi);
+                
                 if ($dataUser['role'] == 'admin') {
                     return redirect()->to('admin/dashboard');
                 } elseif ($dataUser['role'] == 'mahasiswa') {
