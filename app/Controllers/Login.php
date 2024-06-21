@@ -6,6 +6,13 @@ class Login extends BaseController
 {
     public function index()
     {
+        if (session()->get('isLoggedIn')) {
+            if (session()->get('role') == 'admin') {
+                return redirect()->to('admin/dashboard');
+            } elseif (session()->get('role') == 'mahasiswa') {
+                return redirect()->to('mahasiswa/dashboard');
+            }
+        }
         $err = '';
         $ModelUser = new \App\Models\ModelUser();
         $login = $this->request->getPost('login');
