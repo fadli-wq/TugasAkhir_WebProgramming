@@ -71,7 +71,7 @@ Kami menyambut baik kontribusi dari siapa pun. Silakan ikuti langkah-langkah ber
     ```
 8. Push ke branch:
     ```bash
-    git push origin nama-fitur
+    git push -u origin nama-fitur
     ```
 9. Buat Pull Request di GitHub.
 
