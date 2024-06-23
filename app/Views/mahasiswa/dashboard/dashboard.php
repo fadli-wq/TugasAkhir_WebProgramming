@@ -219,7 +219,7 @@
                 <i class="fas fa-search"></i>
                 <h3>Laporkan Barang Hilang</h3>
                 <p>Laporkan barang yang hilang atau ditemukan.</p>
-                <a href="<?= base_url('mahasiswa/barang_hilang') ?>">Lebih Lanjut</a>
+                <a href="<?= base_url('mahasiswa/barang_hilang/form') ?>">Lebih Lanjut</a>
             </div>
             <div class="card">
                 <i class="fas fa-comments"></i>
