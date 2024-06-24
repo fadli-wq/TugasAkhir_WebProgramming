@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controllers\mahasiswa\baranghilang;
+
 use App\Controllers\BaseController;
 
 class BarangHilang extends BaseController
@@ -13,10 +14,18 @@ class BarangHilang extends BaseController
     }
     public function index()
     {
-        $data['barang_hilang'] = $this->model->where('status_pengembalian', 'belum')->findAll();
+        $data = [
+            'barang_hilang' => $this->model->where('status_pengembalian', 'belum')->paginate(6, 'barang_hilang'),
+            'pager' => $this->model->pager
+        ];
         return view('mahasiswa/baranghilang/barang_hilang', $data);
     }
-    
+
+    public function form()
+    {
+        return view('mahasiswa/baranghilang/form_barang_hilang');
+    }
+
     public function simpan()
     {
         $validasi = \Config\Services::validation();
@@ -72,11 +81,16 @@ class BarangHilang extends BaseController
                     'tempat_ditemukan' => $tempat,
                     'contact_person' => $contact,
                     'nama_file' => $newName,
-                    'status_pengembalian' => 'belum' // Status default
+                    'status_pengembalian' => 'belum',
+                    'status' => 'Menunggu'
                 ];
-                $this->model->insert($data);
-                $hasil['sukses'] = "Berhasil menyimpan data";
-                $hasil['error'] = false;
+                if ($this->model->insert($data)) {
+                    $hasil['sukses'] = "Berhasil menyimpan data";
+                    $hasil['error'] = false;
+                } else {
+                    $hasil['error'] = "Gagal menyimpan data ke database";
+                    $hasil['sukses'] = false;
+                }
             } else {
                 $hasil['error'] = "Gagal mengunggah foto";
                 $hasil['sukses'] = false;
@@ -86,7 +100,6 @@ class BarangHilang extends BaseController
             $hasil['sukses'] = false;
         }
 
-
-        return json_encode($hasil);
+        return redirect()->back()->with('hasil', $hasil);
     }
 }
