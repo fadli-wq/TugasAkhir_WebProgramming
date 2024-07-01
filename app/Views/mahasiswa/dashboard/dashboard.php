@@ -201,7 +201,7 @@
             <p><b>UPNVJ</b></p>
         </div>
         <nav class="nav-menu">
-            <a href="<?= base_url('mahasiswa/pinjam_ruang') ?>"><i class="fas fa-house"></i><b>Peminjaman Ruang</b></a><br>
+            <a href="<?= base_url('mahasiswa/pinjam_ruang') ?>"><i class="fas fa-house"></i><b>Peminjaman Ruangan</b></a><br>
             <a href="<?= base_url('mahasiswa/jadwal_ruang') ?>"><i class="fa-solid fa-clipboard-list"></i><b>Jadwal Peminjaman</b></a><br>
             <a href="<?= base_url('mahasiswa/barang_hilang') ?>"><i class="fas fa-search"></i><b>Barang Hilang</b></a><br>
             <a href="<?= base_url('mahasiswa/kritik_saran') ?>"><i class="fas fa-comments"></i><b>Kritik dan Saran</b></a><br>
