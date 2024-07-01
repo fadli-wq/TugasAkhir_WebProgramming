@@ -1,32 +1,51 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <link rel="icon" href="https://www.upnvj.ac.id/id/files/download/89f8a80e388ced3704b091e21f510755">
     <meta charset="UTF-8">
     <title>Form Peminjaman Ruang</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Lexend';
+            font-weight: 200;
+        }
+    </style>
 </head>
+
 <body class="bg-light">
     <div class="container mt-5 border rounded bg-white py-4 px-5 mb-5">
-        <h1 class="text-center">Form Peminjaman Ruang</h1>
+        <h1 class="text-center">Form Peminjaman Ruangan</h1>
         <hr>
-        <form action="<?= base_url('mahasiswa/pinjamruang/pinjamruang/submit') ?>"method="post" enctype="multipart/form-data">
-        <?php if (session()->getFlashdata('errors')) : ?>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="alert alert-danger" role="alert">
-                        <?= session()->getFlashdata('errors') ?>
+        <div class="alert alert-info alert-dismissible fade show" role="alert"><strong>
+                Jika ingin meminjam ruangan dengan periode 1 hari pilih tanggal mulai dan tanggal berakhir yang sama.</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert"><strong>
+                Bagi dosen harap mengisi kolom program studi dengan "-".</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <form action="<?= base_url('mahasiswa/pinjamruang/pinjamruang/submit') ?>" method="post" enctype="multipart/form-data">
+            <?php if (session()->getFlashdata('errors')) : ?>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="alert alert-danger" role="alert">
+                            <?= session()->getFlashdata('errors') ?>
+                        </div>
                     </div>
                 </div>
-            </div>
-        <?php endif; ?>
+            <?php endif; ?>
             <div class="row mb-3">
                 <div class="col-md-4">
                     <label for="nama" class="form-label">Nama</label>
                     <input type="text" class="form-control" id="nama" name="nama" value="<?= old('nama') ?>" required>
                 </div>
                 <div class="col-md-4">
-                    <label for="nim" class="form-label">NIM</label>
+                    <label for="nim" class="form-label">NIM/NIDN</label>
                     <input type="text" class="form-control" id="nim" name="nim" value="<?= old('nim') ?>" required>
                 </div>
                 <div class="col-md-4">
@@ -90,5 +109,7 @@
             <a href="<?= base_url('mahasiswa/dashboard') ?>" class="btn btn-secondary">Kembali ke Dashboard</a>
         </form>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 </body>
+
 </html>

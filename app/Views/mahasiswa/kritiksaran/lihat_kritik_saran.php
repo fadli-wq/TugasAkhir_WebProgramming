@@ -6,12 +6,20 @@
     <meta charset="UTF-8">
     <title>Lihat Kritik dan Saran</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
     <style>
         .header-title h1 {
             text-align: center;
             font-weight: bold;
         }
 
+        body {
+            font-family: 'Lexend';
+            font-weight: 200;
+        }
+        
         .star-rating {
             direction: rtl;
             display: inline-block;
@@ -87,11 +95,12 @@
                 </div>
             <?php endif; ?>
             <div class="button-container">
-                <a href="<?= base_url('mahasiswa/dashboard') ?>" class="btn btn-primary">Kembali ke Beranda</a>
+                <a href="<?= base_url('mahasiswa/dashboard') ?>" class="btn btn-primary">Kembali ke Dashboard</a>
                 <a href="<?= base_url('mahasiswa/kritik_saran') ?>" class="btn btn-secondary">Kembali ke Kritik dan Saran</a>
             </div>
         </section>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

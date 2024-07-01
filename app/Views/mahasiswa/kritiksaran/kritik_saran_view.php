@@ -6,7 +6,14 @@
     <meta charset="UTF-8">
     <title>Kritik dan Saran</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
     <style>
+        body {
+            font-family: 'Lexend';
+            font-weight: 200;
+        }
         .header-title h1 {
             text-align: center;
             font-weight: bold;
