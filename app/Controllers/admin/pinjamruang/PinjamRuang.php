@@ -11,7 +11,12 @@ class PinjamRuang extends BaseController
     public function index()
     {
         $model = new ModelPinjamRuang();
-        $data['peminjaman'] = $model->findAll();
+        $currentPage = $this->request->getVar('page_peminjaman') ?: 1;
+        $data = [
+            'peminjaman' => $model->paginate(7, 'peminjaman'),
+            'pager' => $model->pager,
+            'currentPage' => $currentPage
+        ];
 
         return view('admin/pinjamruang/pinjam_ruang_view', $data);
     }
@@ -19,53 +24,49 @@ class PinjamRuang extends BaseController
     public function update()
     {
         $model = new ModelPinjamRuang();
+        $id = $this->request->getPost('id');
         $nama = $this->request->getPost('nama');
         $nim = $this->request->getPost('nim');
         $ruangan = $this->request->getPost('ruangan');
         $status = $this->request->getPost('status');
+        $timestamp = $this->request->getPost('timestamp');
+        $currentPage = $this->request->getPost('currentPage');
 
-        // Log input data for debugging
-        error_log("Nama: $nama, NIM: $nim, Ruangan: $ruangan, Status: $status");
+        // Validation rules
+        $validationRules = [
+            'id' => 'required',
+            'nama' => 'required',
+            'nim' => 'required',
+            'ruangan' => 'required',
+            'status' => 'required',
+            'timestamp' => 'required',
+        ];
 
-        if (empty($nama) || empty($nim) || empty($ruangan) || empty($status)) {
+        if (!$this->validate($validationRules)) {
             session()->setFlashdata('error', 'Semua field harus diisi.');
-            return redirect()->to(base_url('admin/pinjam_ruang'));
+            return redirect()->to(base_url('admin/pinjam_ruang'))->withInput();
         }
 
         // Menentukan kriteria yang spesifik
-        $existingData = $model->where('nama', $nama)
-            ->where('nim', $nim)
-            ->where('ruangan', $ruangan)
-            ->orderBy('timestamp', 'DESC')
-            ->findAll();
-
-        // Log retrieved data for debugging
-        error_log("Existing Data: " . print_r($existingData, true));
+        $existingData = $model->find($id);
 
         if (empty($existingData)) {
             session()->setFlashdata('error', "Data dengan nama $nama dan NIM $nim tidak ditemukan.");
             return redirect()->to(base_url('admin/pinjam_ruang'));
         }
 
-        $updatedCount = 0;
-        foreach ($existingData as $data) {
-            if ($data['status'] != $status) {
-                $updateData = ['status' => $status];
+        if ($existingData['status'] != $status) {
+            $updateData = ['status' => $status];
 
-                // Log update data for debugging
-                error_log("Updating ID: {$data['id']} with Data: " . print_r($updateData, true));
-
-                $model->update($data['id'], $updateData);
-                $updatedCount++;
+            if ($model->update($existingData['id'], $updateData)) {
+                session()->setFlashdata('notification', "Status Peminjaman untuk $nama dengan NIM $nim berhasil diperbarui.");
+            } else {
+                session()->setFlashdata('error', 'Terjadi kesalahan saat memperbarui data.');
             }
-        }
-
-        if ($updatedCount > 0) {
-            session()->setFlashdata('notification', "Anda telah berhasil memperbarui $updatedCount Status Peminjaman untuk $nama dengan NIM $nim.");
         } else {
-            session()->setFlashdata('notification', "Semua Status Peminjaman untuk $nama dengan NIM $nim sudah terupdate.");
+            session()->setFlashdata('notification', "Status Peminjaman untuk $nama dengan NIM $nim sudah terupdate.");
         }
 
-        return redirect()->to(base_url('admin/pinjam_ruang'));
+        return redirect()->to(base_url('admin/pinjam_ruang?page_peminjaman=' . $currentPage));
     }
 }

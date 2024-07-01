@@ -20,8 +20,8 @@ class AdminDashboard extends BaseController
         $modelKritikSaran = new ModelKritikSaran();
 
         $data = [
-            'peminjaman_ruangan' => $modelPinjamRuang->countAllResults(),
-            'barang_hilang' => $modelBarangHilang->countAllResults(),
+            'peminjaman_ruangan' => $modelPinjamRuang->where('status','approved')->countAllResults(),
+            'barang_hilang' => $modelBarangHilang->where('status', 'menunggu')->countAllResults(),
             'kritik_saran' => $modelKritikSaran->countAllResults()
         ];
 
