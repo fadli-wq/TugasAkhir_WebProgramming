@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
+    <link rel="icon" href="https://www.upnvj.ac.id/id/files/download/89f8a80e388ced3704b091e21f510755">
     <meta charset="UTF-8">
     <title>Status Peminjaman</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Lexend';
+            font-weight: 200;
+        }
+    </style>
 </head>
-
 <body>
     <div class="container mt-5">
         <div class="alert alert-warning" role="alert">
@@ -21,5 +29,4 @@
         }
     </script>
 </body>
-
 </html>
