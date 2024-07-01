@@ -3,7 +3,6 @@
 namespace Config;
 
 use CodeIgniter\Config\BaseService;
-
 /**
  * Services Configuration file.
  *

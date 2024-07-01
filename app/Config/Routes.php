@@ -22,6 +22,9 @@ $routes->group('admin', ['filter' => 'login'], function($routes) {
     $routes->get('kritik_saran', 'admin\kritiksaran\KritikSaran::index');
     $routes->get('barang_hilang', 'admin\baranghilang\BarangHilang::index');
     $routes->post('barang_hilang/update', 'admin\baranghilang\BarangHilang::updateStatus');
+    $routes->get('barang_hilang/cek', 'admin\baranghilang\BarangHilang::cekBarang');
+    $routes->post('barang_hilang/approve', 'admin\baranghilang\BarangHilang::approve');
+    $routes->post('barang_hilang/reject', 'admin\baranghilang\BarangHilang::reject');
     $routes->get('pinjam_ruang', 'admin\pinjamruang\PinjamRuang::index');
     $routes->post('pinjam_ruang/update', 'admin\pinjamruang\PinjamRuang::update');
 });
@@ -41,4 +44,6 @@ $routes->group('mahasiswa', ['filter' => 'login'], function($routes) {
     $routes->get('lihat_status_pinjam', 'mahasiswa\pinjamruang\PinjamRuang::cekStatusPeminjaman');
     $routes->get('lihat_status_pinjam2', 'mahasiswa\pinjamruang\PinjamRuang2::cekStatusPeminjaman2');
     $routes->get('barang_hilang', 'mahasiswa\baranghilang\BarangHilang::index');
+    $routes->get('barang_hilang/form', 'mahasiswa\baranghilang\BarangHilang::form');
+    $routes->post('barang_hilang/simpan', 'mahasiswa\baranghilang\BarangHilang::simpan');
 });
