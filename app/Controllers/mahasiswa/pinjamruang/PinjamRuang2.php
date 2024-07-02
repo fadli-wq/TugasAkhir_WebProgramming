@@ -12,5 +12,4 @@ class PinjamRuang2 extends BaseController
 
         return view('mahasiswa/pinjamruang/status_pinjam_2', $data);
     }
-
 }
