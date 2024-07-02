@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
     <link rel="icon" href="https://www.upnvj.ac.id/id/files/download/89f8a80e388ced3704b091e21f510755">
     <meta charset="UTF-8">
@@ -50,7 +49,6 @@
         }
     </style>
 </head>
-
 <body>
     <div class="makasih">
         <div class="pesan">
@@ -62,5 +60,4 @@
         </div>
     </div>
 </body>
-
 </html>

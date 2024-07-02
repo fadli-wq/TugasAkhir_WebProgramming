@@ -17,7 +17,6 @@
 
         .btn-back {
             margin-right: 10px;
-            /* Jarak dari tombol Refresh */
         }
 
         .btn-refresh {
@@ -88,5 +87,4 @@
         }
     </script>
 </body>
-
 </html>

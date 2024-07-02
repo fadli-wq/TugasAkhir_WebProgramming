@@ -51,7 +51,6 @@
         }
     </style>
 </head>
-
 <body>
     <div class='makasih'>
         <div class='pesan'>
@@ -63,5 +62,4 @@
         </div>
     </div>
 </body>
-
 </html>

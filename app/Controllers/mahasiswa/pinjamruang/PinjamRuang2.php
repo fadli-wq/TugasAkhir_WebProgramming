@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Controllers\mahasiswa\pinjamruang;
 use App\Controllers\BaseController;
 use App\Models\ModelPinjamRuang;
@@ -13,5 +12,4 @@ class PinjamRuang2 extends BaseController
 
         return view('mahasiswa/pinjamruang/status_pinjam_2', $data);
     }
-
 }

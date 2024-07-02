@@ -1,6 +1,4 @@
 <?php
-// ni controllernya
-
 namespace App\Controllers\mahasiswa\kritiksaran;
 
 use App\Models\ModelKritikSaran;
@@ -55,8 +53,6 @@ class KritikSaran extends BaseController
         if (!$data) {
             throw new \CodeIgniter\Exceptions\PageNotFoundException('Kritik dan saran tidak ditemukan');
         }
-
         return view('mahasiswa/kritiksaran/lihat_kritik_saran', $data);
     }
-    
 }
