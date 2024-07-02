@@ -51,6 +51,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="ditolak">
         <div class="pesan">
@@ -69,4 +70,5 @@
         </div>
     </div>
 </body>
+
 </html>

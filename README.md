@@ -1,52 +1,89 @@
-# CodeIgniter 4 Application Starter
+# RADIFF APP MENGGUNAKAN CODEIGNITER 4
 
-## What is CodeIgniter?
+## Apa itu RADIFF APP ?
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+RADIFF APP adalah sebuah aplikasi web yang memiliki fitur untuk meminjam ruangan, mengecek jadwal ruangan, mencari barang hilang, serta kritik dan saran dalam lingkup fakultas ilmu komputer di universitas pembangunan nasional veteran jakarta.
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+## Fitur
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+- **Peminjaman Ruangan**: Memungkinkan pengguna untuk memesan ruangan untuk berbagai keperluan akademik dan non-akademik dalam lingkup fakultas ilmu komputer di universitas pembangunan nasional veteran jakarta.
+- **Pengecekan Jadwal**: Pengguna juga dapat mengecek jadwal mereka setelah mereka meminjam ruangan ataupun sebelum mereka meminjam dalam lingkup fakultas ilmu komputer di universitas pembangunan nasional veteran jakarta.
+- **Pencarian Barang Hilang**: Fitur untuk melaporkan dan mencari barang yang hilang dalam lingkup fakultas ilmu komputer di universitas pembangunan nasional veteran jakarta.
+- **Kritik dan Saran**: Pengguna dapat memberi kritik dan saran kepada fasilitas dalam lingkup fakultas ilmu komputer di universitas pembangunan nasional veteran jakarta.
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+## Tentang Pengembang
 
-## Installation & updates
+Nama RADIFF APP merupakan singkatan dari nama para pengembangnya:
+- Rendy [@RendyEkaHernawan](https://github.com/RendyEkaHernawan)
+- Riani [@rianip1105](https://github.com/rianip1105)
+- Aura [@carissaura](https://github.com/carissaura)
+- Dito [@dittoheone](https://github.com/dittoheone)
+- Fadhli [@fadli-wq](https://github.com/fadli-wq)
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+## Teknologi yang Digunakan
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+- **Framework**: CodeIgniter 4, Bootstrap 5
+- **Bahasa Pemrograman**: PHP, HTML, CSS, JavaScript
+- **Library**: jQuery
+- **Database**: MySQL
+- **Versi Control**: Git
+
+## Penggunaan
+
+### Peminjaman Ruangan
+
+1. Login menggunakan akun upnvj.
+2. Masuk ke halaman peminjaman ruangan.
+3. Isi formulir peminjaman dan klik "Submit".
+4. Pengajuan berhasil.
+
+### Pengecekan Jadwal Ruangan
+1. Login menggunakan akun upnvj.
+2. Masuk ke halaman jadwal peminjaman.
+3. Pilih ruangan yang ingin dicari serta periode peminjamannya.
+4. Lihat daftar jadwal peminjaman ruangan.
+
+### Pencarian Barang Hilang
+1. Login menggunakan akun upnvj.
+2. Masuk ke halaman pencarian barang hilang.
+3. Lihat daftar barang yang hilang atau laporkan barang baru yang hilang.
+
+## Kontribusi
+
+Kami menyambut baik kontribusi dari siapa pun. Silakan ikuti langkah-langkah berikut untuk berkontribusi:
+
+1. Fork repositori ini.
+2. Buat branch fitur baru:
+   ```bash
+    git branch nama-fitur
+    ```
+4. Ganti branch:
+    ```bash
+    git checkout nama-fitur
+    ```
+5. Tambahkan perubahan anda:
+   ```bash
+    git add .
+    ```
+7. Commit perubahan Anda:
+    ```bash
+    git commit -m 'Menambahkan fitur x'
+    ```
+8. Push ke branch:
+    ```bash
+    git push -u origin nama-fitur
+    ```
+9. Buat Pull Request di GitHub.
+
+## Lisensi
+
+Proyek ini dilisensikan di bawah [MIT License](LICENSE).
 
 ## Setup
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
+Salin `env` ke `.env` dan sesuaikan untuk aplikasi Anda, khususnya baseURL
+dan pengaturan database apa pun.
 
-## Important Change with index.php
-
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
-
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
-
-**Please** read the user guide for a better explanation of how CI4 works!
-
-## Repository Management
-
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
-
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
 
 ## Server Requirements
 

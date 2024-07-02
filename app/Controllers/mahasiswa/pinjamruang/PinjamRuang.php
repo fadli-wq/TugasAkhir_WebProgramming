@@ -42,8 +42,7 @@ class Pinjamruang extends Controller
         // Cek apakah mahasiswa sudah memiliki peminjaman yang aktif
         $existingLoan = $model->where('nama', $nama)
             ->where('nim', $nim)
-            ->where('tanggal_berakhir >=', date('Y-m-d'))
-            ->whereIn('status', ['Approved','Pending'])
+            ->where('status', 'Pending')
             ->first();
 
         if ($existingLoan) {
@@ -70,6 +69,8 @@ class Pinjamruang extends Controller
             return redirect()->back()->withInput();
         }
 
+        $timestamp = date('Y-m-d H:i:s');
+
         $data = [
             'nama' => $nama,
             'nim' => $nim,
@@ -81,6 +82,7 @@ class Pinjamruang extends Controller
             'tanggal_berakhir' => $this->request->getPost('tanggal_berakhir'),
             'keterangan' => $this->request->getPost('keterangan'),
             'status' => 'Pending',
+            'timestamp' => $timestamp,
         ];
 
         if ($model->save($data)) {
@@ -114,7 +116,7 @@ class Pinjamruang extends Controller
         $loan = $model->where('nama', $nama)
             ->where('nim', $nim)
             ->whereIn('status', ['Approved', 'Pending'])
-            ->orderBy('tanggal_mulai', 'desc') 
+            ->orderBy('tanggal_mulai', 'desc')
             ->first();
 
         if (!$loan) {
