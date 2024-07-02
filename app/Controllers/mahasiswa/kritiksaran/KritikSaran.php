@@ -1,6 +1,4 @@
 <?php
-// ni controllernya
-
 namespace App\Controllers\mahasiswa\kritiksaran;
 
 use App\Models\ModelKritikSaran;
