@@ -1,15 +1,26 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
+    <link rel="icon" href="https://www.upnvj.ac.id/id/files/download/89f8a80e388ced3704b091e21f510755">
     <meta charset="UTF-8">
     <title>Jadwal Ruang</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
     <style>
+        body {
+            font-family: 'Lexend';
+            font-weight: 200;
+        }
+
         h1 {
             text-align: center;
         }
     </style>
 </head>
+
 <body class="bg-light">
     <div class="container mt-5 border rounded bg-white py-4 px-5 mb-5">
         <header class="header-title mb-4">
@@ -63,4 +74,5 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
