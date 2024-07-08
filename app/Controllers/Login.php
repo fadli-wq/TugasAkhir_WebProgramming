@@ -28,7 +28,7 @@ class Login extends BaseController
                 }
             }
 
-            // If there are no errors, set session data and redirect based on role
+            // Jika tidak ada error, set dataSesi dan redirect berdasarkan role.
             if (empty($err)) {
                 $dataSesi = [
                     'id' => $dataUser['id'],
@@ -44,7 +44,7 @@ class Login extends BaseController
                 }
             }
 
-            // If there's an error, set flash data and redirect to the login page
+            // Jika terjadi error, set flashdata dan redirect ke halaman login.
             if ($err) {
                 session()->setFlashdata('nim', $nim);
                 session()->setFlashdata('error', $err);

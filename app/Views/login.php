@@ -128,7 +128,7 @@
                 <?php endif; ?>
                 <div class="box-login">
                     <i class="fa fa-envelope"></i>
-                    <input type="text" name="nim"id="inputNim" placeholder="Nim">
+                    <input type="text" name="nim"id="inputNim" placeholder="Nim / Nidn / Nip">
                 </div>
                 <div class="box-login">
                     <i class="fa fa-lock"></i>
