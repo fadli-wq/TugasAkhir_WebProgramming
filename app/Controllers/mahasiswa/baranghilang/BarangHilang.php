@@ -15,7 +15,7 @@ class BarangHilang extends BaseController
     public function index()
     {
         $data = [
-            'barang_hilang' => $this->model->where('status_pengembalian', 'belum')->paginate(6, 'barang_hilang'),
+            'barang_hilang' => $this->model->where('status_pengembalian', 'Belum')->where('status', 'disetujui')->paginate(6, 'barang_hilang'),
             'pager' => $this->model->pager
         ];
         return view('mahasiswa/baranghilang/barang_hilang', $data);
@@ -81,11 +81,11 @@ class BarangHilang extends BaseController
                     'tempat_ditemukan' => $tempat,
                     'contact_person' => $contact,
                     'nama_file' => $newName,
-                    'status_pengembalian' => 'belum',
+                    'status_pengembalian' => 'Belum',
                     'status' => 'Menunggu'
                 ];
                 if ($this->model->insert($data)) {
-                    $hasil['sukses'] = "Berhasil menyimpan data";
+                    $hasil['sukses'] = "Berhasil melaporkan barang hilang";
                     $hasil['error'] = false;
                 } else {
                     $hasil['error'] = "Gagal menyimpan data ke database";

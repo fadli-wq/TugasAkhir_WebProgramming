@@ -11,23 +11,21 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
     <style>
+        body {
+            font-family: 'Lexend';
+            font-weight: 200;
+        }
+
         .container {
             max-width: 800px;
             margin-top: 20px;
         }
 
-        body {
-            font-family: 'Lexend';
-            font-weight: 200;
-        }
-        
-        /* Style for the preview image */
         #preview {
             max-width: 300px;
             max-height: 300px;
             margin-top: 10px;
             display: none;
-            /* Added margin for better spacing */
         }
     </style>
 </head>
@@ -72,9 +70,13 @@
                         <!-- Preview image -->
                         <img id="preview" src="#" alt="Preview Foto">
                     </div>
+                    <div class="alert alert-info alert-dismissible fade show" role="alert">
+                            Jika sudah menemukan barangnya harap hubungi <strong>089509231437.</strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" onclick="location.href='<?= base_url('mahasiswa/dashboard') ?>'">Kembali</button>
-                        <button type="submit" class="btn btn-primary">Simpan</button>
+                        <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
                 </form>
             </div>

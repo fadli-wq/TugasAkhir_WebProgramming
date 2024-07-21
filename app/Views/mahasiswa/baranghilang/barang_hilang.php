@@ -21,35 +21,41 @@
 <body class="bg-light">
     <div class="container mt-5 border rounded bg-white py-4 px-5 mb-5">
         <h3>Barang Hilang</h3>
-        <a href="<?= site_url('mahasiswa/barang_hilang/form') ?>">Laporkan Barang Hilang</a><br/>
+        <button type="button" class="btn btn-primary">
+            <a href="<?= site_url('mahasiswa/barang_hilang/form') ?>" style="text-decoration: none; color: white; font-weight: bold;">
+                Laporkan Barang Hilang
+            </a>
+        </button>
         <div class="row mt-4">
-            <?php if(isset($barang_hilang) && count($barang_hilang) > 0): ?>
-                <?php foreach($barang_hilang as $index => $dataBH): ?>
-                    <?php if($index % 3 == 0 && $index != 0): ?>
-                        </div><div class="row mt-4">
-                    <?php endif; ?>
-                    <div class="col-md-4 mt-4">
-                        <div class="card h-100">
-                            <img src="<?= base_url('uploads/' . urlencode($dataBH['nama_file'])) ?>" class="card-img-top" alt="<?= $dataBH['nama_barang'] ?>" style="object-fit: cover; height: 180px;">
-                            <div class="card-body">
-                                <h5 class="card-title"><?= $dataBH['nama_barang'] ?></h5>
-                                <p class="card-text"><b>Tempat Ditemukan:</b> <?= $dataBH['tempat_ditemukan'] ?></p>
-                                <p class="card-text"><b>Contact Person:</b> <?= $dataBH['contact_person'] ?></p>
-                            </div>
-                        </div>
-                    </div>
-                <?php endforeach; ?>
-            <?php else: ?>
-                <div class="col-12">
-                    <p class="text-center">Tidak ada barang hilang.</p>
+            <?php if (isset($barang_hilang) && count($barang_hilang) > 0) : ?>
+                <?php foreach ($barang_hilang as $index => $dataBH) : ?>
+                    <?php if ($index % 3 == 0 && $index != 0) : ?>
+        </div>
+        <div class="row mt-4">
+        <?php endif; ?>
+        <div class="col-md-4 mt-4">
+            <div class="card h-100">
+                <img src="<?= base_url('uploads/' . urlencode($dataBH['nama_file'])) ?>" class="card-img-top" alt="<?= $dataBH['nama_barang'] ?>" style="object-fit: cover; height: 180px;">
+                <div class="card-body">
+                    <h5 class="card-title"><?= $dataBH['nama_barang'] ?></h5>
+                    <p class="card-text"><b>Tempat Ditemukan:</b> <?= $dataBH['tempat_ditemukan'] ?></p>
+                    <p class="card-text"><b>Contact Person:</b> <?= $dataBH['contact_person'] ?></p>
                 </div>
-            <?php endif; ?>
+            </div>
+        </div>
+    <?php endforeach; ?>
+<?php else : ?>
+    <div class="col-12">
+        <p class="text-center">Tidak ada barang hilang.</p>
+    </div>
+<?php endif; ?>
         </div>
         <div class="row mt-4">
             <div class="col-12">
-                <?= $pager->links('barang_hilang','pager_barang_hilang') ?>
+                <?= $pager->links('barang_hilang', 'pager') ?>
             </div>
         </div>
+        <button type="button" class="btn btn-secondary" onclick="location.href='<?= base_url('mahasiswa/dashboard') ?>'">Kembali</button>
     </div>
     <!-- SCRIPT JAVASCRIPT -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
